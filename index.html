@@ -1,1 +1,918 @@
-<h1> Hello </h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Austin Kingsley</title>
+    <link rel="icon" href="./images/icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=0.6">
+    <script>
+      function reveal() {
+        var reveals = document.querySelectorAll(".reveal");
+
+        for (var i = 0; i < reveals.length; i++) {
+          var windowHeight = window.innerHeight;
+          var elementTop = reveals[i].getBoundingClientRect().top;
+          var elementVisible = 150;
+
+          if (elementTop <= windowHeight - elementVisible + 100) {
+            reveals[i].classList.add("active");
+          } else {
+            reveals[i].classList.remove("active");
+          }
+        }
+      }
+
+      window.addEventListener("scroll", reveal);
+
+      function revealstatic() {
+        var reveals = document.querySelectorAll(".reveal-static");
+
+        for (var i = 0; i < reveals.length; i++) {
+          var windowHeight = window.innerHeight;
+          var elementTop = reveals[i].getBoundingClientRect().top;
+          var elementVisible = 150;
+
+          if (elementTop <= windowHeight - elementVisible + 100) {
+            reveals[i].classList.add("active");
+          } else {
+            reveals[i].classList.remove("active");
+          }
+        }
+      }
+
+      window.addEventListener("scroll", revealstatic);
+
+      var n = 0;
+      function myFunction() {
+        var element = document.body;
+        element.classList.toggle("dark-mode-general");
+
+        element = document.getElementById("header");
+        element.classList.toggle("dark-mode-header");
+
+        element = document.getElementById("about-link");
+        element.classList.toggle("dark-mode-link-general");
+
+        element = document.getElementById("projects-link");
+        element.classList.toggle("dark-mode-link-general");
+
+        element = document.getElementById("contact-link");
+        element.classList.toggle("dark-mode-link-general");
+
+        element = document.getElementById("dark-mode-link");
+        element.classList.toggle("dark-mode-link-general");
+
+        if (element.innerHTML === "Dark mode") {
+          element.innerHTML = "Light mode";
+        } else {
+          element.innerHTML = "Dark mode";
+        }
+
+        element = document.getElementById("home-box");
+        element.classList.toggle("dark-mode-home-box");
+
+        element = document.getElementById("greeting-text");
+        element.classList.toggle("dark-mode-greeting-text");
+
+        var elems = document.getElementsByClassName("project-card");
+        for (var i = 0; i < elems.length; i++) {
+          elems.item(i).classList.toggle("dark-mode-project-card");
+        }
+
+        elems = document.getElementsByClassName("project-date");
+        for (var i = 0; i < elems.length; i++) {
+          elems.item(i).classList.toggle("dark-mode-project-date");
+        }
+
+        element = document.getElementById("email-button");
+        element.classList.toggle("dark-mode-contact-button");
+
+        element = document.getElementById("linkedin-button");
+        element.classList.toggle("dark-mode-contact-button");
+        
+        element = document.getElementById("envelope-icon");
+        element.classList.toggle("dark-mode-fa-envelope");
+
+        element = document.getElementById("linkedin-icon");
+        element.classList.toggle("dark-mode-fa-linkedin");
+
+        element = document.getElementById("bottom-header");
+        element.classList.toggle("dark-mode-header");
+        
+        element = document.getElementById("home-link");
+        element.classList.toggle("dark-mode-link-general");
+
+        element = document.getElementById("about-link2");
+        element.classList.toggle("dark-mode-link-general");
+
+        element = document.getElementById("projects-link2");
+        element.classList.toggle("dark-mode-link-general");
+
+        element = document.getElementById("dark-mode-link2");
+        element.classList.toggle("dark-mode-link-general");
+
+        if (element.innerHTML === "Dark mode") {
+          element.innerHTML = "Light mode";
+        } else {
+          element.innerHTML = "Dark mode";
+        }
+      }
+
+      function copyEmail() {
+
+        navigator.clipboard.writeText("austinanilkingsley@gmail.com");
+        
+        var tooltip = document.getElementById("myTooltip");
+        tooltip.innerHTML = "Copied email!";
+      }
+
+      function hoverCopyEmail() {
+        var tooltip = document.getElementById("myTooltip");
+        tooltip.innerHTML = "Copy email to clipboard";
+      }
+    </script>
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        color: black;
+        background-color: white;
+        margin: 0px;
+        padding: 0px;
+        border: 0px;
+        font-family: 'Roboto Mono', monospace;
+        font-size: 20px;
+        transition-duration: 0.5s;
+      }
+
+      .dark-mode-general {
+        color: white;
+        background-color: black;
+        transition-duration: 0.5s;
+      }
+
+      p {
+        margin: 0px;
+        padding: 0px;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      .home-box {
+        height: 600px;
+        background-color: rgb(232, 230, 230);
+        transition-duration: 0.5s;
+        box-shadow: inset 0px -100px 100px -100px rgba(0, 0, 0, 0.1), 5px 200px 1000px 100px rgb(0, 0, 0, 0.1);
+        /* box-shadow: 5px 50px 100px 100px rgb(0, 0, 0, 0.1); */
+      }
+
+      .dark-mode-home-box {
+        height: 600px;
+        background-color: rgb(0, 39, 76);
+      }
+
+      .header {
+        color: black;
+        height: 50px;
+        /* background-color: rgb(139, 199, 255); */
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        transition-duration: 0.5s;
+        box-shadow: 0 0 100px rgb(0, 0, 0, 0.1);
+        z-index: 10;
+        position: relative;
+      }
+
+      .dark-mode-header {
+        color: white;
+        height: 50px;
+        background-color: rgb(11, 55, 95);
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .left-section {
+        flex: 1;
+        /* background-color: rgb(204, 0, 255); */
+        display: flex;
+        justify-content: space-around;
+        align-self: center;
+      }
+
+      .about-link, .about-link:visited {
+        color: black;
+        font-size: 16px;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
+        width: 80px;
+        height: 30px;
+        text-align: center;
+        /* background-color: rgb(150, 133, 154); */
+        transition-duration: 0.1s, 0.1s, 0.5s;
+        transition-property: text-shadow, font-size, color ;
+      }
+
+      .projects-link, .projects-link:visited {
+        color: black;
+        font-size: 16px;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
+        width: 120px;
+        height: 30px;
+        text-align: center;
+        /* background-color: rgb(150, 133, 154); */
+        transition-duration: 0.1s, 0.1s, 0.5s;
+        transition-property: text-shadow, font-size, color ;
+      }
+
+      .contact-link, .contact-link:visited {
+        color: black;
+        font-size: 16px;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
+        width: 100px;
+        height: 30px;
+        text-align: center;
+        /* background-color: rgb(150, 133, 154); */
+        transition-duration: 0.1s, 0.1s, 0.5s;
+        transition-property: text-shadow, font-size, color ;
+
+      }
+
+      .about-link:hover, .projects-link:hover, .contact-link:hover, .dark-mode-link:hover {
+        cursor: pointer;
+        font-size: 20px;
+        transition-duration: 0.1s;
+      }
+
+      .about-link:active, .projects-link:active, .contact-link:active, .dark-mode-link:active {
+        transition-duration: 0.1s;
+        text-shadow: 0px 0px 1px gray;
+      }
+
+      .right-section {
+        flex: 1;
+        display: flex;
+        /* background-color: rgb(243, 197, 255); */
+        justify-content: right;
+        align-self: center;
+      }
+
+      .dark-mode-link, .dark-mode-link:visited {
+        color: black;
+        font-size: 16px;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
+        width: 130px;
+        height: 30px;
+        text-align: center;
+        /* background-color: rgb(150, 133, 154); */
+        transition-duration: 0.1s, 0.1s, 0.5s;
+        transition-property: text-shadow, font-size, color ;
+      }
+
+      .dark-mode-link-general, .dark-mode-link-general:visited {
+        color: white;
+        transition-duration: 0.1s, 0.1s, 0.5s;
+        transition-property: text-shadow, font-size, color ;
+      }
+
+      .dark-mode-link-general:hover {
+        color: white;
+      }
+
+      .dark-mode-link-general:active {
+        text-shadow: 0px 0px 1px white;
+      }
+
+      .greeting {
+        padding: 250px;
+        text-align: center;
+      }
+
+      .greeting-text {
+        color: black;
+        font-size: 20px;
+        transition-duration: 0.5s;
+      }
+
+      .dark-mode-greeting-text {
+        color: white;
+        transition-duration: 0.5s;
+      }
+
+      .name {
+        display: inline-block;
+        width: 100%;
+        font-size: 40px;
+      }
+
+      .about-section {
+        width: 500px;
+        margin: auto;
+        padding-top: 300px;
+        padding-bottom: 150px;
+        /* background-color: rgb(243, 197, 255); */
+        text-align: center;
+      }
+
+      .about-title {
+        font-size: 30px;
+        margin-bottom: 10px;
+      }
+
+      .about-body {
+        font-size: 20px;
+      }
+
+      .projects-section {
+        margin: auto;
+        padding-top: 150px;
+        /* background-color: rgb(145, 91, 158); */
+        text-align: center;
+      }
+
+      .projects-title {
+        font-size: 30px;
+        margin-bottom: 10px;
+      }
+
+      .projects-abstract {
+        font-size: 20px;
+      }
+
+      .contact-section {
+        width: 500px;
+        margin: auto;
+        padding-top: 160px;
+        padding-bottom: 300px;
+        text-align: center;
+      }
+
+      .contact-title {
+        width: 500px;
+        margin-bottom: 10px;
+        font-size: 30px;
+        /* background-color: rgb(142, 71, 102); */
+      }
+
+      .contact-body {
+        display: flex;
+        width: 500px;
+        justify-content: center;
+        /* background-color: rgb(157, 245, 173); */
+      }
+
+      .email-div, .linkedin-div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        width: 160px;
+        height: 100px;
+      }
+      
+      .email-button, .linkedin-button {
+        height: 80px;
+        width: 80px;
+        margin: auto;
+        font-size: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        border: none;
+        border-radius: 12px;
+        transition-duration: 0.1s, 0.1s, 0.1s, 0.1s, 0.5s;
+        transition-property: font-shadow, height, width, font-size, background-color;
+      }
+
+      .email-button:hover, .linkedin-button:hover {
+        font-size: 40px;
+        height: 90px;
+        width: 90px;
+        cursor: pointer;
+        transition-duration: 0.1s;
+      }
+
+      .dark-mode-contact-button {
+        background-color: white;
+        text-shadow: 0px 0px 1px white;
+        transition-duration: 0.1s, 0.1s, 0.1s, 0.1s, 0.5s;
+        transition-property: font-shadow, height, width, font-size, background-color;
+      }
+
+      .email-button:active, .linkedin-button:active {
+        box-shadow: 0 0 10px gray;
+        transition-duration: 0.1s;
+      }
+
+      .fa-envelope, .fa-linkedin {
+        color: white;
+        padding: 20px;
+        text-align: center;
+        text-decoration: none;
+        margin: 5px 2px;
+        transition-duration: 0.5s;
+        transition-property: color;
+      }
+
+      .dark-mode-fa-envelope, .dark-mode-fa-linkedin {
+        color: black;
+        transition-duration: 0.5s;
+        transition-property: color;
+      }
+
+      .project-box {
+        height: 530px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* border: 1px solid black; */
+      }
+
+      .project-card {
+        width: 550px;
+        padding: 0px;
+        margin: auto;
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 20px;
+        border-color: rgba(0, 0, 0, 0);
+        background-color: rgb(244, 244, 244);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        transition: transform 0.2s ease-in-out 0s, background-color 0.5s;
+      }
+
+      .dark-mode-project-card {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        background-color: rgb(30, 30, 30);
+      }
+
+
+      .disabled-hover{
+        pointer-events: none;
+      }
+      
+      .project-card-title {
+        margin: 0;
+        font-size: 24px;
+        padding-bottom: 5px;
+        transition-duration: 0.1s;
+      }
+      
+      .project-date {
+        font-size: 12px;
+        color: rgb(85, 85, 85);
+        margin-top: -5px;
+        margin-bottom: 5px;
+      }
+
+      .dark-mode-project-date {
+        font-size: 12px;
+        color: rgb(185, 185, 185);
+        margin-top: -5px;
+        margin-bottom: 5px;
+      }
+
+      .project-card-image {
+        width: 500px;
+        border-radius: 8px;
+      }
+
+      .project-card-desc {
+        font-size: 15px;
+        padding: 5px;
+        /* background-color: blueviolet; */
+      }
+
+      .demo-button-container {
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* background-color: aquamarine; */
+      }
+
+      .demo-button {
+        display: inline-block;
+        font-family: 'Roboto Mono', monospace;
+        font-size: 24px;
+        margin: auto;
+        margin-top: 10px;
+        background: none;
+        border-radius: 5px;
+        border: none;
+        box-shadow: 0 0 5px black;
+        transition-duration: 0.1s;
+      }
+
+      .demo-button:hover {
+        font-size: 30px;
+        transition-duration: 0.1s;
+      }
+
+      .demo-button:active {
+        box-shadow: 0 0 10px;
+        transition-duration: 0.1s;
+      }
+
+      .dark-mode-demo-button {
+        color: white;
+        box-shadow: 0 0 5px white;
+        transition-duration: 0.1s;
+      }
+
+      .reveal {
+        position: relative;
+        transform: translateY(150px);
+        opacity: 0;
+        transition: 1.5s transform, 1.5s opacity, 0.1s width, 0.1s height, 0.5s background-color;
+      }
+      
+      .reveal.active {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      .reveal-static {
+        position: relative;
+        opacity: 0;
+        transition: 2.5s opacity, 0.1s width, 0.1s height, 0.5s background-color;
+      }
+      
+      .reveal-static.active {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      .project-card:hover {
+        -webkit-transform: scale(1.05);
+        -moz-transform: scale(1.05);
+        -o-transform: scale(1.05);
+        transform: scale(1.05);
+        transition: transform 0.2s ease-in-out 0s;
+      }
+
+      .op {
+        opacity: 1;
+      }
+
+      .tooltip {
+        opacity: 1;
+        position: relative;
+        display: inline-block;
+      }
+
+      .tooltip .tooltiptext {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap;
+        font-family: 'Roboto Mono', monospace;
+        font-size: 10px;
+        visibility: hidden;
+        width: 140px;
+        height: 22px;
+        background-color: #555;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px;
+        position: absolute;
+        z-index: 1;
+        bottom: -50%;
+        left: 50%;
+        margin-left: -75px;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      .tooltip .tooltiptext::after {
+        opacity: 1;
+        content: "";
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent transparent #555 transparent;
+      }
+
+      .tooltip:hover .tooltiptext {
+        position: absolute;
+        visibility: visible;
+        opacity: 1;
+      }
+
+
+
+      [type=radio] {
+        display: none;
+      }
+
+      #slider {
+        height: 600px;
+        position: relative;
+        perspective: 1000px;
+        transform-style: preserve-3d;
+      }
+
+      @media only screen and (max-width: 800px)
+      {
+        #slider {
+          -webkit-transform: scale(0.75) translateY(-100px);
+          -moz-transform: scale(0.75) translateY(-100px);
+          -o-transform: scale(0.75) translateY(-100px);
+          transform: scale(0.75) translateY(-100px);
+          padding-bottom: -500px;
+        }
+
+        .projects-section {
+          margin-bottom: -100px;
+        }
+      }
+
+      #slider label {
+        margin: auto;
+        width: 550px;
+        height: 450px;
+        border-radius: 4px;
+        position: absolute;
+        left: 0; right: 0;
+        cursor: pointer;
+        transition: transform 0.4s ease;
+      }
+
+      #s1:checked ~ #slide4, #s2:checked ~ #slide5,
+      #s3:checked ~ #slide1, #s4:checked ~ #slide2,
+      #s5:checked ~ #slide3 {
+        transform: translate3d(-30%,0,-200px);
+      }
+
+      #s1:checked ~ #slide5, #s2:checked ~ #slide1,
+      #s3:checked ~ #slide2, #s4:checked ~ #slide3,
+      #s5:checked ~ #slide4 {
+        transform: translate3d(-15%,0,-100px);
+      }
+
+      #s1:checked ~ #slide1, #s2:checked ~ #slide2,
+      #s3:checked ~ #slide3, #s4:checked ~ #slide4,
+      #s5:checked ~ #slide5 {
+        transform: translate3d(0,0,0);
+      }
+
+      #s1:checked ~ #slide2, #s2:checked ~ #slide3,
+      #s3:checked ~ #slide4, #s4:checked ~ #slide5,
+      #s5:checked ~ #slide1 {
+        transform: translate3d(15%,0,-100px);
+      }
+
+      #s1:checked ~ #slide3, #s2:checked ~ #slide4,
+      #s3:checked ~ #slide5, #s4:checked ~ #slide1,
+      #s5:checked ~ #slide2 {
+        transform: translate3d(30%,0,-200px);
+      }
+
+      .invis {
+        opacity: 0;
+      }
+
+    </style>
+
+  </head>
+  <body>
+    <div id="header" class="header">
+      <div class="left-section">
+        <a id="about-link" onclick="location.href='#about'" class="about-link">About</a>
+        <a id="projects-link" onclick="location.href='#projects'" class="projects-link">Projects</a>
+        <a id="contact-link" onclick="location.href='#contact'" class="contact-link">Contact</a>
+      </div>
+      <div class="right-section">
+        <a id="dark-mode-link" onclick="myFunction()" class="dark-mode-link">Dark mode</a>
+      </div>
+    </div>
+    <div id="home-box" class="home-box">
+      <div class="greeting">
+        <p id="greeting-text" class="greeting-text">
+          Hey, I'm
+          <span class="name">
+            Austin Kingsley
+          </span>
+        </p>
+      </div>
+    </div>
+
+    <div id="about" class="invis"> uwu </div>
+    <div id="about-section" class="about-section reveal">
+      <div class="about-title">
+        About me
+      </div>
+      <div class="about-body">
+        I'm a final year BSc Computer Science student at the University of Warwick
+      </div>
+    </div>
+
+    <div id="projects" class="invis"> uwu </div>
+    <div id="projects-section" class="projects-section">
+      <div class="projects-title-and-abstract reveal">
+        <div id="projects-title" class="projects-title">
+          My projects
+        </div>
+        <div class="projects-abstract">
+          Here are some of my creations over the past few years:
+        </div>
+      </div>
+      <div>
+
+        <div class="project-box reveal" style="padding: 0px;" >
+          <div class="project-card">
+            <div class="project-card-title"> PowerLyft </div>
+            <div class="project-date"> 2023 </div>
+            <img class="project-card-image" src="./images/app.jpg">
+            <div class="project-card-desc">
+              As part of my final year university project, I created an application for gym-goers to analyse videos
+              of barbell exercises. Using machine learning and computer vision techniques, the application features the ability to classify images/videos of 
+              exercises being performed into squat, bench press, or deadlift. The app also traces out the bar path, plots motion graphs, and validates form.
+            </div>
+          </div>
+        </div>
+
+        <div class="project-box reveal" style="margin: 16px;" >
+          <div class="project-card">
+            <div class="project-card-title"> Mentoring Platform </div>
+            <div class="project-date"> 2022 </div>
+            <img class="project-card-image" src="./images/mentorconnect.png">
+            <div class="project-card-desc">
+              I worked as the lead back-end developer on a university software development group project.
+              We built a platform to match mentors and mentees to each other based on a compatibility heuristic,
+              allowing them to schedule meetings, send messages and more. The full stack, highly scalable web 
+              application was made using Node.js and Django and deployed with Docker.
+            </div>
+          </div>
+        </div>
+
+        <div class="project-box reveal" style="margin: -1px 0 -1px;">
+          <div class="project-card">
+            <div class="project-card-title"> Custom Language Parser </div>
+            <div class="project-date"> 2022 </div>
+            <img class="project-card-image" src="./images/parser.png">
+            <div class="project-card-desc">
+              I wrote a parser and interpreter for a custom programming
+              language using JavaCC as part of a university coursework.
+              The language has a specific syntax, such as a exact formatting
+              of brackets and curly brackets, which must be followed for a program 
+              to be parsed and interpreted successfully. This coursework received a perfect mark. 
+            </div>
+          </div>
+        </div>
+
+        <div class="project-box reveal" style="margin: -53px 0 -53px;">
+          <div class="project-card">
+            <div class="project-card-title"> AI Show Scheduler </div>
+            <div class="project-date"> 2022 </div>
+            <img class="project-card-image" src="./images/aischeduler.png">
+            <div class="project-card-desc"> 
+              I produced a python program to assign comedians to slots <br> of a comedy show schedule in a way
+              that minimises a cost heuristic, while satisfying a set of constraints. This university
+              coursework tested my understanding of AI techniques such as stochastic greedy hill
+              descent and backtracking which I demonstrated in my solution.
+            </div>
+          </div>
+        </div>
+
+        <br>
+
+        <section id="slider" style="margin: 18px;">
+          <input type="radio" name="slider" id="s1" checked>
+          <input type="radio" name="slider" id="s2">
+          <input type="radio" name="slider" id="s3">
+          <input type="radio" name="slider" id="s4">
+          <input type="radio" name="slider" id="s5">
+          <label for="s1" id="slide1">
+            <div class="project-card reveal disabled-hover" style="height: 460px;">
+              <div class="project-card-title"> Maze Pathfinder </div>
+              <div class="project-date"> 2020 </div>
+              <img class="project-card-image" style="width: 400px; border-radius: 0px;" src="./images/robotmaze.png">
+              <div class="project-card-desc"> 
+                I created a controller for a robot to navigate through a randomly generated maze to a destination cell in Java.
+                This was my first university coursework and also my first time touching object-oriented programming.
+              </div>
+            </div>
+          </label>
+          <label for="s2" id="slide2">
+            <div class="project-card reveal disabled-hover" style="height: 460px; transition-delay: 0.3s; transition-property: transform, background-color; transition: background-color 0.5s, opacity 1.5s, transform 1.5s 0.3s;">
+              <div class="project-card-title"> Tautology Checker </div>
+              <div class="project-date"> 2022 </div>
+              <img class="project-card-image" src="./images/tautcheck.png">
+              <div class="project-card-desc"> 
+                I wrote a resolution theorem prover in prolog to check whether a propositional formula is a tautology or not.
+                The program successfully handled unary, primary and secondary logical connectives.
+              </div>
+            </div>
+          </label>
+          <label for="s3" id="slide3">
+            <div class="project-card reveal disabled-hover" style="height: 460px; transition-delay: 0.6s; transition-property: transform, background-color; transition: background-color 0.5s, opacity 1.5s, transform 1.5s 0.3s;">
+              <div class="project-card-title"> Scratch Clone </div>
+              <div class="project-date"> 2021 </div>
+              <img class="project-card-image" src="./images/scratchclone.png">
+              <div class="project-card-desc"> 
+                I used Haskell to write an interpreter for a remake of the programming langauge Scratch.
+                The interpreter handled variable assignments, loops, and an array of arithmetic and logical operators.
+                It was particularly challenging yet fun writing this in a functional programming language
+              </div>
+            </div>
+          </label>
+          <label for="s4" id="slide4">
+            <div class="project-card reveal disabled-hover" style="height: 460px; transition-delay: 0.6s; transition-property: transform, background-color; transition: background-color 0.5s, opacity 1.5s, transform 1.5s 0.6s;">
+              <div class="project-card-title"> SQL Gig Displayer </div>
+              <div class="project-date"> 2021 </div>
+              <img class="project-card-image" src="./images/sqlgig.png">
+              <div class="project-card-desc"> 
+                I wrote complex SQL queries for a hypothetical music promotion company planning a music festival.
+                The queries involved retrieval, modification, and deletion of rows of a schema relating gigs with acts, venues, and tickets.
+              </div>
+            </div>
+          </label>
+          <label for="s5" id="slide5">
+            <div class="project-card reveal disabled-hover" style="height: 460px; transition-delay: 0.3s; transition-property: transform, background-color; transition: background-color 0.5s, opacity 1.5s, transform 1.5s 0.3s;">
+              <div class="project-card-title"> Data Structures Web App </div>
+              <div class="project-date"> 2021 </div>
+              <img class="project-card-image" src="./images/waffles.png">
+              <div class="project-card-desc"> 
+                I extended the functionality of a web application for hosting restaurant information, customer reviews, and more. This university
+                coursework acted as an introduction to data structures in Java, and involved using and creating from scratch hash maps, linked lists, and sets.
+              </div>
+            </div>
+          </label>
+        </section>
+
+      </div>
+    </div>
+
+    <div id="contact" class="invis"> uwu </div>
+    <div id="contact-section" class="contact-section reveal-static">
+      <div class="contact-title">
+        Contact me
+      </div>
+      <div class="contact-abstract">
+        Here's how you can get in touch:
+      </div>
+      <div class="contact-body">
+
+
+        <div class="email-div">
+          <div class="tooltip">
+            <button id="email-button" class="email-button" onclick="copyEmail()" onmouseout="hoverCopyEmail()">
+              <i id="envelope-icon" class="fa fa-envelope"></i>
+              <span class="tooltiptext" id="myTooltip">Copy email to clipboard</span>
+            </button>
+          </div>
+        </div>
+                
+        <div class="linkedin-div">
+          <div class="tooltip">
+            <a id="linkedin-button" onclick="window.open('https://linkedin.com/in/austin-kingsley-209035207/','_blank')" class="linkedin-button">
+              <i id="linkedin-icon" class="fa fa-linkedin"></i>
+              <span class="tooltiptext" id="myTooltip">LinkedIn</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="bottom-header" class="header">
+      <div class="left-section">
+        <a id="home-link" onclick="location.href='#'" class="contact-link">Home</a>
+        <a id="about-link2" onclick="location.href='#about'" class="about-link">About</a>
+        <a id="projects-link2" onclick="location.href='#projects'" class="projects-link">Projects</a>
+      </div>
+      <div class="right-section">
+        <a id="dark-mode-link2" onclick="myFunction()" class="dark-mode-link">Dark mode</a>
+      </div>
+    </div>
+
+  </body>
+</html>
